@@ -1,0 +1,73 @@
+﻿@model ShoppingCart
+@{
+    var RelatedProducts = ViewBag.RelatedProducts as List<Product>;
+}
+
+
+<form method="post" asp-action="Details">
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <input asp-for="ProductId" hidden/>
+            <input asp-for="@Model.Product.CategoryId" name="CatId" hidden/>
+            <input name="Referer" hidden value="@ViewBag.Referer" />
+
+            <div class="col-md-6">
+                <img class="card-img-top mb-5 mb-md-0" src="~/@Model.Product.ImageUrl" alt="Product Image" width="600" height="500"/>
+                </div>
+            <div class="col-md-6">
+                    <div class="small mb-2"><h6>@Model.Product.Category.Name</h6></div>
+                <h2 class="display-8 fw-bolder">@Model.Product.Name</h2>
+                <div class="fs-5 mb-5">
+                    <span>$@Model.Product.Price</span>
+                </div>
+                <p class="lead">@Model.Product.Description</p>
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-outline-dark" type="button" onclick="decrementQuantity()">
+                            <i class="bi-dash"></i>
+                        </button>
+                        <input class="form-control text-center mx-2" id="inputQuantity" asp-for="Count" style="max-width: 4rem" value="1" readonly />
+                        <button class="btn btn-outline-dark" type="button" onclick="incrementQuantity()">
+                            <i class="bi-plus"></i>
+                        </button>
+                        <button class="btn btn-outline-dark flex-shrink-0 ms-3" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Add to cart
+                        </button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+</form>
+
+<!-- Related items section-->
+<section class="py-5 bg-light">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2 class="fw-bolder mb-4">Related products</h2>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left">
+            @foreach (var item in ViewBag.RelatedProducts)
+            {
+                <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="~/@item.ImageUrl" alt="Product Image" width="200" height="190"/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">@item.Name</h5>
+                            <!-- Product price-->
+                            $@item.Price
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="\Customer\Home\Details\@item.Id">View Details</a></div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

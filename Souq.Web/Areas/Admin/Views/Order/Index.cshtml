@@ -1,0 +1,27 @@
+﻿@model IEnumerable<OrderHeaderVM>
+@{
+    ViewBag.PageTitle = "Orders Management";
+    ViewBag.CardTitle = "Orders Menu";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+
+<br />
+<table id="orderstable" class="table table-hover" width="100%">
+    <thead>
+        <tr>
+            <td><b>Id</b></td>
+            <td><b>Name</b></td>
+            <td><b>Phone Number</b></td>
+            <td><b>Email</b></td>
+            <td><b>Order Status</b></td>
+            <td><b>Payment Status</b></td>
+            <td><b>Total</b></td>
+            <td><b>Action</b></td>
+        </tr>
+    </thead>
+</table>
+
+@section Scripts {
+    <script src="~/js/order.js"></script>
+}

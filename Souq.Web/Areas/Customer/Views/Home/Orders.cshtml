@@ -1,0 +1,122 @@
+﻿@model IEnumerable<OrderDetailsViewModel>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+
+@{
+    ViewData["Title"] = "Orders";
+}
+
+@{
+    var bootstrapPagerOptions = new PagedListRenderOptions
+    {
+        LiElementClasses = new[] { "page-item" },
+        PageClasses = new[] { "page-link" },
+        ContainerDivClasses = new[] { "pagination-container" },
+        UlElementClasses = new[] { "pagination" },
+        DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+        DisplayLinkToLastPage = PagedListDisplayMode.Always,
+        DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+        DisplayLinkToNextPage = PagedListDisplayMode.Always,
+        DisplayLinkToIndividualPages = true,
+        MaximumPageNumbersToDisplay = 5,
+        LinkToFirstPageFormat = "First",
+        LinkToPreviousPageFormat = "Previous",
+        LinkToNextPageFormat = "Next",
+        LinkToLastPageFormat = "Last",
+        Display = PagedListDisplayMode.Always
+    };
+}
+
+<style>
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; /* Adjust margin as needed */
+    }
+</style>
+
+<div class="container mt-4">
+    <h1 class="mb-4">Your Orders</h1>
+
+    @if (Model.Any())
+    {
+        foreach (var order in Model)
+        {
+            <div class="card mb-4">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="mb-0 d-inline-block">Order ID: @order.OrderId</h5>
+                        <span class="badge bg-primary ms-2">Order Status: @order.OrderStatus</span>
+                        <span class="badge bg-secondary ms-2">Payment Status: @order.PaymentStatus</span>
+                        <p class="mb-0 text-muted">Order Date: @order.OrderDate</p>
+                        @if (order.ShippingDate.HasValue)
+                        {
+                            <p class="mb-0 text-muted">Shipping Date: @order.ShippingDate.Value.ToString("dd/MM/yyyy")</p>
+                        }
+                        else
+                        {
+                            <p class="mb-0 text-muted">Shipping Date: No date available</p>
+                        }
+                        <p class="mb-0 text-muted">Shipped To: @order.Address - @order.City</p>
+                        <p class="mb-0 text-muted">Tracking Number: @order.TrackingNumber</p>
+                        <p class="mb-0 text-muted">Total Amount: @order.TotalAmount.ToString("c")</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        @if (order.OrderStatus == SD.Pending)
+                        {
+                            <div class="d-flex justify-content-end">
+                                <form asp-controller="Cart" asp-action="PayExistingOrder" asp-route-orderId="@order.OrderId" method="post">
+                                    <input type="hidden" name="orderId" value="@order.OrderId" />
+                                    <button type="submit" class="btn btn-info d-flex align-items-center">
+                                        <i class="bi bi-credit-card-2-back me-2"></i> Pay for Order
+                                    </button>
+                                </form>
+
+                                <div style="width: 10px;"></div> <!-- Adjust the width as needed for spacing -->
+
+                                <form asp-controller="Home" asp-action="CancelOrder" asp-route-orderId="@order.OrderId" method="post">
+                                    <input type="hidden" name="orderId" value="@order.OrderId" />
+                                    <button type="submit" class="btn btn-danger d-flex align-items-center">
+                                        <i class="bi bi-x-circle me-2"></i> Cancel Order
+                                    </button>
+                                </form>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        @foreach (var product in order.Products)
+                        {
+                            <div class="col-md-6 mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <div class="img-div text-center">
+                                            <a href="\Customer\Home\Details\@product.ProductId">
+                                                <img src="~/@product.ProductImage" class="card-img-top img-thumbnail" alt="Product Image" style="max-width: 100%;">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                            <h5 class="card-title">@product.ProductName</h5>
+                                            <p class="card-text">Quantity: @product.Quantity</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Orders", new { page }), bootstrapPagerOptions)
+    }
+    else
+    {
+        <div class="alert alert-info" role="alert">
+            No orders found.
+        </div>
+    }
+</div>

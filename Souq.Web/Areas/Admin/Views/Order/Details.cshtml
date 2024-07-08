@@ -1,0 +1,285 @@
+﻿@using Souq.Utilities
+@model OrderVM
+@{
+    ViewBag.PageTitle = "Order Management";
+    ViewBag.CardTitle = "Order Details";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+
+    <style>
+        .btn-custom {
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .btn-custom-start-process {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+        }
+
+            .btn-custom-start-process:hover {
+                background-color: #0056b3;
+                box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+            }
+
+        .btn-custom-start-shipping {
+            background-color: #28a745;
+            border: none;
+            color: white;
+            box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2);
+        }
+
+            .btn-custom-start-shipping:hover {
+                background-color: #218838;
+                box-shadow: 0 6px 12px rgba(40, 167, 69, 0.3);
+            }
+
+        .btn-custom-cancel-order {
+            background-color: #dc3545;
+            border: none;
+            color: white;
+            box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
+        }
+
+            .btn-custom-cancel-order:hover {
+                background-color: #c82333;
+                box-shadow: 0 6px 12px rgba(220, 53, 69, 0.3);
+            }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .card-body-custom {
+            padding-top: 20px;
+        }
+
+        .list-group-item-custom {
+            padding: 15px 20px;
+        }
+
+        .img-fluid-custom {
+            max-width: 100px;
+            max-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <form asp-controller="Order" method="post">
+
+        <div class="container mt-0">
+        <h3 class="mb-4">PickUp Details</h3>
+        <div class="row">
+            <div class="col-md-8">
+                    <input hidden asp-for="OrderHeader.OrderHeader.Id" name="id" />
+                    <input hidden asp-for="OrderHeader.OrderHeader.UserId" />
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrderHeader.OrderHeader.Id">Order Id</label>
+                            <input readonly type="text" class="form-control" asp-for="OrderHeader.OrderHeader.Id" placeholder="Order Id">
+                            <span asp-validation-for="OrderHeader.OrderHeader.Id" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrderHeader.OrderHeader.UserName">User Name</label>
+                            <input type="text" class="form-control" asp-for="OrderHeader.OrderHeader.UserName" placeholder="User Id">
+                            <span asp-validation-for="OrderHeader.OrderHeader.UserName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrderHeader.ApplicationUser.Email">Email</label>
+                            <input readonly type="text" class="form-control" asp-for="OrderHeader.ApplicationUser.Email" placeholder="User Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrderHeader.OrderHeader.PhoneNumber">Phone Number</label>
+                            <input type="text" class="form-control" asp-for="OrderHeader.OrderHeader.PhoneNumber" placeholder="Phone Number">
+                            <span asp-validation-for="OrderHeader.OrderHeader.PhoneNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrderHeader.OrderHeader.City">City</label>
+                            <input type="text" class="form-control" asp-for="OrderHeader.OrderHeader.City" placeholder="City">
+                            <span asp-validation-for="OrderHeader.OrderHeader.City" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrderHeader.OrderHeader.Address">Address</label>
+                            <input type="text" class="form-control" asp-for="OrderHeader.OrderHeader.Address" placeholder="Address">
+                            <span asp-validation-for="OrderHeader.OrderHeader.Address" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrderHeader.OrderHeader.OrderDate">Order Date</label>
+                            <input readonly type="date" class="form-control" asp-for="OrderHeader.OrderHeader.OrderDate" placeholder="Order Date">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrderHeader.OrderHeader.ShippingDate">Shipping Date</label>
+                            <input type="date" class="form-control" asp-for="OrderHeader.OrderHeader.ShippingDate" placeholder="Shipping Date">
+                            <span asp-validation-for="OrderHeader.OrderHeader.ShippingDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrderHeader.OrderHeader.Carrier">Carrier</label>
+                            <input type="text" class="form-control" id="carrier" asp-for="OrderHeader.OrderHeader.Carrier" placeholder="Carrier">
+                            <span asp-validation-for="OrderHeader.OrderHeader.Carrier" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrderHeader.OrderHeader.TrackingNumber">Tracking Number</label>
+                            <input type="text" class="form-control" id="tracking" asp-for="OrderHeader.OrderHeader.TrackingNumber" placeholder="Tracking Number">
+                            <span asp-validation-for="OrderHeader.OrderHeader.TrackingNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrderHeader.OrderHeader.PaymentStatus">Payment Status</label>
+                            <input readonly type="text" class="form-control" asp-for="OrderHeader.OrderHeader.PaymentStatus" placeholder="Payment Status">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrderHeader.OrderHeader.PaymentDate">Payment Date</label>
+                            <input readonly type="date" class="form-control" asp-for="OrderHeader.OrderHeader.PaymentDate" placeholder="Payment Date">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrderHeader.OrderHeader.SessionId">Session Id</label>
+                            <input readonly type="text" class="form-control" asp-for="OrderHeader.OrderHeader.SessionId" placeholder="Session Id">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrderHeader.OrderHeader.PaymentIntentId">Payment Intent Id</label>
+                            <input readonly type="text" class="form-control" asp-for="OrderHeader.OrderHeader.PaymentIntentId" placeholder="Payment Intent Id">
+                        </div>
+                    </div>
+                    <input asp-for="@Model.OrderHeader.OrderHeader.OrderStatus" hidden />
+                    <input asp-for="@Model.OrderHeader.OrderHeader.TotalPrice" hidden />
+
+                    <button type="submit" asp-action="UpdateOrderDetails" class="btn btn-primary">Update Pickup Details</button>
+                
+            </div>
+            <div class="col-md-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span>Order Summary</span>
+                </h4>
+                <div class="card">
+                    <div class="card-header">
+                        <label class="btn btn-outline-primary form-control my-2">
+                            Order Status: @Model.OrderHeader.OrderHeader.OrderStatus
+                        </label>
+                    </div>
+                    <div class="card-body card-body-custom">
+                        <ul class="list-group mb-3">
+                            @foreach (var item in Model.OrderDetails)
+                            {
+                                <li class="list-group-item list-group-item-custom d-flex justify-content-between p-2">
+                                    <div class="row container">
+                                        <div class="col-8">
+                                            <h6 class="my-0 text-primary">
+                                                Title:
+                                                <a href="\Customer\Home\Details\@item.ProductId" style="color: inherit; text-decoration: none;">
+                                                    @item.Product.Name
+                                                </a>
+                                            </h6>
+                                            <small class="text-muted">Price: @item.Product.Price</small><br />
+                                            <small class="text-muted">Quantity: @item.Count</small>
+                                            <h6 class="my-0 text-danger" style="font-size:0.85rem">
+                                                <strong>Total: @((item.Count * item.Price).ToString("c"))</strong>
+                                            </h6>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="\Customer\Home\Details\@item.ProductId">
+                                                <img src="~/@item.Product.ImageUrl" alt="@item.Product.Name" class="img-fluid img-fluid-custom" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                            <li class="list-group-item bg-dark">
+                                <div class="row container">
+                                    <div class="col-10">
+                                        <h5 class="text-white">Total Price</h5>
+                                    </div>
+                                    <div class="col-10 text-end">
+                                        <h5 class="text-white">
+                                            @Model.OrderHeader.OrderHeader.TotalPrice.ToString("c")
+                                        </h5>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    @if(Model.OrderHeader.OrderHeader.OrderStatus == SD.Approve)
+                    {
+                        <button asp-action="StartProccess" type="submit" class="btn btn-custom btn-custom-start-process ">
+                            <i class="bi bi-truck"></i> Start Proccessing
+                        </button>
+                    }
+                    @if (Model.OrderHeader.OrderHeader.OrderStatus == SD.Proccessing)
+                    {
+                        <button asp-action="StartShipping" type="submit" onclick="return CheckData()" class="btn btn-custom btn-custom-start-shipping">
+                            <i class="bi bi-truck"></i> Start Shipping
+                        </button> 
+                    }
+                    @if ((Model.OrderHeader.OrderHeader.OrderStatus != SD.Cancelled && Model.OrderHeader.OrderHeader.OrderStatus != SD.Refund) || (Model.OrderHeader.OrderHeader.OrderStatus != SD.Cancelled && Model.OrderHeader.OrderHeader.OrderStatus != SD.Cancelled))
+                    {
+                            if (Model.OrderHeader.OrderHeader.OrderStatus != SD.Shipped)
+                            {
+                                <button asp-action="CancelOrder" type="submit" class="btn btn-custom btn-custom-cancel-order">
+                                    <i class="bi bi-x-circle"></i> Cancel Order
+                                </button>
+                            }
+                    }
+                </div>    
+            </div>
+        </div>
+    </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+@section Scripts {
+    <script>
+        function CheckData() {
+
+            if (document.getElementById("carrier").value.trim() == '') {
+                Swal.fire({
+                    title: 'There is an error!!',
+                    text: 'Please Enter Carrier.',
+                    icon: 'error'
+                });
+                return false;
+            }
+            if (document.getElementById("tracking").value.trim() == '') {
+                Swal.fire({
+                    title: 'There is an error!!',
+                    text: 'Please Enter Tracking Number.',
+                    icon: 'error'
+                });
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+}
+
+
+

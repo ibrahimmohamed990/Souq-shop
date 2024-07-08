@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7GxKavBGpUOMuqh6ojl59AAAAAACAAAAAAAQZgAAAAEAACAAAAAHwK4+diyPUKaIAl/vYW9JfyxguGftfjskX5PoSrTbWAAAAAAOgAAAAAIAACAAAADmwo5jkxRS2tnIcQrsEoR73zCqFFqbIZJDFjoMffsBCiAAAACysp+Wjh9P+9pJPcYDJodL+LNCB3AtjUdaPth5LresLUAAAACZaDVn0diX5nu7dCYCSGhZap3p51UMZKLZQ5Ov/ctp6p9CaaippK6zt61QzMxh6nTkNWDB97/eRqjFFPSTiQdU</EncryptedPassword>
+    <History>False|2024-07-04T03:58:55.6519613Z||;False|2024-07-04T06:52:03.7704682+03:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="Souq.DataAccessLayer.Context.IdentityUserDbContext">
+      <Value>Server=db6279.databaseasp.net%3b Database=db6279%3b User Id=db6279%3b Password=S-e6%402AwkY!3%3b Encrypt=False%3b MultipleActiveResultSets=True%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

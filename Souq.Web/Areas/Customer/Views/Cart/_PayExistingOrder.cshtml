@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+    int orderId = ViewBag.OrderId;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        function submitForm() {
+            console.log("Submitting form to PayExistingOrder...");
+            document.getElementById('postForm').submit();
+        }
+    </script>
+</head>
+<body onload="submitForm()">
+    <form id="postForm" asp-controller="Cart" asp-action="PayExistingOrder" asp-route-orderId="@orderId" method="post">
+        <input type="hidden" name="orderId" value="@orderId" />
+    </form>
+</body>
+</html>

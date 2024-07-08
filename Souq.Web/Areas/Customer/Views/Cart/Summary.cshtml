@@ -1,0 +1,190 @@
+﻿@using Souq.Entities.ViewModels
+@using Microsoft.Extensions.Options
+@inject IOptions<StripeKeys> Stripe
+
+@model ShoppingCartVM
+
+@{
+    var user = await UserManager.GetUserAsync(User);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/summary.css">
+</head>
+<body>
+    <main class="page">
+        <section class="shopping-cart dark">
+            <div class="container-fluid my-5">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
+                        <div class="card shadow-lg">
+                            <div class="row mx-auto justify-content-center text-center">
+                                <div class="col-12 mt-3">
+                                    <nav aria-label="breadcrumb" class="second">
+                                        <ol class="breadcrumb indigo lighten-6 first">
+                                            <li class="breadcrumb-item font-weight-bold">
+                                                <a class="black-text text-uppercase" href="\Customer\Home"><span class="mr-md-3 mr-1">BACK TO SHOP</span></a>
+                                                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                            </li>
+                                            <li class="breadcrumb-item font-weight-bold">
+                                                <a class="black-text text-uppercase" href="\Customer\Cart"><span class="mr-md-3 mr-1">SHOPPING BAG</span></a>
+                                                <i class="fa fa-angle-double-right text-uppercase" aria-hidden="true"></i>
+                                            </li>
+                                            <li class="breadcrumb-item font-weight-bold">
+                                                <a class="black-text text-uppercase active-2" href="#"><span class="mr-md-3 mr-1">CHECKOUT</span></a>
+                                            </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                            <form asp-action="Summary" method="post">
+                                <div class="row justify-content-around">
+                                    <div class="col-md-5">
+                                        <div class="card border-0">
+                                            <div class="card-header pb-0">
+                                                <h2 class="card-title space">Billing Address</h2>
+                                                <p class="card-text text-muted mt-4 space">SHIPPING DETAILS</p>
+                                                <hr class="my-0">
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="form-group">
+                                                    <label asp-for="OrderHeader.UserName" class="small text-muted mb-1">NAME</label>
+                                                    <input asp-for="OrderHeader.UserName" type="text" class="form-control form-control-sm">
+                                                    <span asp-validation-for="OrderHeader.UserName" style="font-size:1rem" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="small text-muted mb-1">EMAIL</label>
+                                                    <input type="text" class="form-control form-control-sm" value="@user.Email" readonly>
+                                                </div>
+                                                <div class="row no-gutters">
+                                                    <div class="col-sm-6 pr-sm-2">
+                                                        <div class="form-group">
+                                                            <label asp-for="OrderHeader.City" class="small text-muted mb-1">CITY</label>
+                                                            <input asp-for="OrderHeader.City" type="text" class="form-control form-control-sm">
+                                                            <span asp-validation-for="OrderHeader.City" style="font-size:0.9rem" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label asp-for="OrderHeader.PhoneNumber" class="small text-muted mb-1">PHONE NUMBER</label>
+                                                            <input asp-for="OrderHeader.PhoneNumber" type="text" class="form-control form-control-sm">
+                                                            <span asp-validation-for="OrderHeader.PhoneNumber" style="font-size:0.9rem" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="OrderHeader.Address" class="small text-muted mb-1">ADDRESS</label>
+                                                    <input asp-for="OrderHeader.Address" type="text" class="form-control form-control-sm">
+                                                    <span asp-validation-for="OrderHeader.Address" style="font-size:1rem" class="text-danger"></span>
+                                                </div>
+                                                <div class="row mb-md-5">
+                                                    <div class="col">
+                                                        <button type="submit" class="btn btn-lg btn-block">CHECK OUT</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="card border-0">
+                                            <div class="card-header card-2">
+                                                <p class="card-text text-muted mt-md-4 mb-2 space">
+                                                    YOUR ORDER
+                                                    <a href="\Customer\Cart"><span class="small text-muted ml-2 cursor-pointer">EDIT SHOPPING BAG</span></a>
+                                                </p>
+                                                <hr class="my-2">
+                                            </div>
+                                            <div class="card-body pt-0">
+                                                @foreach (var item in Model.CartsList)
+                                                {
+                                                    <div class="row justify-content-between">
+                                                        <div class="col-auto col-md-7">
+                                                            <div class="media flex-column flex-sm-row">
+                                                                <a href="\Customer\Home\Details\@item.ProductId">
+                                                                    <img class="img-fluid" src="~/@item.Product.ImageUrl" width="62" height="62">
+                                                                </a>
+                                                                <div class="media-body my-auto">
+                                                                    <div class="row">
+                                                                        <div class="col-auto">
+                                                                            <p class="mb-0"><b>@item.Product.Name</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pl-0 flex-sm-col col-auto my-auto">
+                                                            <p class="boxed-1">@item.Count</p>
+                                                        </div>
+                                                        <div class="pl-0 flex-sm-col col-auto my-auto">
+                                                            <p><b>$@item.Product.Price</b></p>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="my-2">
+                                                }
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row justify-content-between">
+                                                            <div class="col-4">
+                                                                <p class="mb-1"><b>Subtotal</b></p>
+                                                            </div>
+                                                            <input asp-for="@Model.TotalPriceForCarts" hidden />
+                                                            <input asp-for="@Model.OrderHeader.TotalPrice" hidden />
+                                                            <div class="flex-sm-col col-auto">
+                                                                <p class="mb-1"><b>$@Model.TotalPriceForCarts</b></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-between">
+                                                            <div class="col">
+                                                                <p class="mb-1"><b>Shipping</b></p>
+                                                            </div>
+                                                            <div class="flex-sm-col col-auto">
+                                                                <p class="mb-1"><b>$0</b></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-between">
+                                                            <div class="col-4">
+                                                                <p><b>Total</b></p>
+                                                            </div>
+                                                            <div class="flex-sm-col col-auto">
+                                                                <p class="mb-1"><b>$@Model.TotalPriceForCarts</b></p>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="my-0">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-5 mt-4">
+                                                    <div class="col-md-7 col-lg-6 mx-auto">
+                                                        <button type="submit" class="btn btn-block btn-outline-primary btn-lg">PLACE ORDER</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="hidden" asp-for="OrderHeader.Id" name ="orderId" />
+                                <input type="hidden" asp-for="TotalPriceForCarts" />
+                                <input type="hidden" asp-for="OrderHeader.UserId" />
+                                <input type="hidden" asp-for="OrderHeader.TotalPrice" />
+                                <input type="hidden" asp-for="OrderHeader.OrderStatus" />
+                                <input type="hidden" asp-for="OrderHeader.PaymentStatus" />
+                                <input type="hidden" asp-for="OrderHeader.OrderDate" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+</body>
+</html>
+

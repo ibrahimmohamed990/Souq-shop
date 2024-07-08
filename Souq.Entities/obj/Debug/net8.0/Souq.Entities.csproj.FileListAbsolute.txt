@@ -1,0 +1,12 @@
+E:\Projects\SOUQ\Souq.Entities\bin\Debug\net8.0\Souq.Entities.deps.json
+E:\Projects\SOUQ\Souq.Entities\bin\Debug\net8.0\Souq.Entities.dll
+E:\Projects\SOUQ\Souq.Entities\bin\Debug\net8.0\Souq.Entities.pdb
+E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\Souq.Entities.csproj.AssemblyReference.cache
+E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\Souq.Entities.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\Souq.Entities.AssemblyInfoInputs.cache
+E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\Souq.Entities.AssemblyInfo.cs
+E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\Souq.Entities.csproj.CoreCompileInputs.cache
+E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\Souq.Entities.dll
+E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\refint\Souq.Entities.dll
+E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\Souq.Entities.pdb
+E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\ref\Souq.Entities.dll

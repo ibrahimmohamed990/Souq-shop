@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Product>
+
+
+@{
+    ViewBag.PageTitle = "Product Management";
+    ViewBag.CardTitle = "Products Menu";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+
+
+<style>
+    table#productstable {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    table#productstable th,
+    table#productstable td {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<div>
+    <a class="btn btn-primary" asp-action="Create">Create Product</a>
+</div>
+<br />
+<table id="productstable" class="table table-hover" width="100%">
+    <thead>
+        <tr>
+            <th style="width: 25%;">Name</th>
+            <th style="width: 30%;">Description</th>
+            <th style="width: 15%;">Category</th>
+            <th style="width: 10%;">Price</th>
+            <th style="width: 15%;">Actions</th>
+        </tr>
+    </thead>
+</table>
+
+@section Scripts{
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="~/js/product.js"></script>
+
+}

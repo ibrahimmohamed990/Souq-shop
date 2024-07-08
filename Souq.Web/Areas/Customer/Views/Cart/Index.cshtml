@@ -1,0 +1,160 @@
+﻿@using Souq.Entities.ViewModels;
+
+@model ShoppingCartVM
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="~/shoppingcart/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        .btn-group-sm .btn {
+            width: 30px;
+        }
+
+        .summary-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .summary-card-header {
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #dee2e6;
+            border-radius: 10px 10px 0 0;
+            padding: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .summary-card-body {
+            padding: 15px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+            .summary-item:last-child {
+                border-bottom: none;
+            }
+
+            .summary-item .text {
+                font-weight: bold;
+            }
+
+            .summary-item .price {
+                font-size: 1.2em;
+                color: #28a745;
+            }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <section class="shopping-cart dark">
+            <div class="container">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-8 cart">
+                            <br>
+                            <div class="title">
+                                <div class="row">
+                                    <h4 class="display-5 mb-2 text-center">Shopping Cart</h4>
+                                    <p class="mb-2 text-center">
+                                        <i class="text-info font-weight-bold">@Model.CartsList.Count()</i> items in your cart
+                                    </p>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        @if(Model.CartsList.Count() > 0)
+                        {
+                        <div class="col-md-12 col-lg-8">
+                            <div class="items">
+                                @foreach (var item in Model.CartsList)
+                                {
+                                    <div class="product row mb-4 p-3 shadow-sm">
+                                        <div class="col-md-3 text-center">
+                                            <a href="\Customer\Home\Details\@item.ProductId">
+                                                <img class="img-fluid mx-auto d-block image" src="~/@item.Product.ImageUrl" alt="Product Image" width="400" height="250" />
+                                            </a>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="col-md-12 product-name">
+                                                        <div class="col"><h5><b>@item.Product.Name</b></h5></div>
+                                                        <div class="product-info">
+                                                            <div class="value">@item.Product.Description</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 quantity mt-4">
+                                                        <div class="btn-group btn-group-sm" role="group">
+                                                            <a class="btn btn-outline-success" asp-action="Plus" asp-route-cartid="@item.ShoppingCartId"><i class="fa fa-plus"></i></a>
+                                                            <span class="quantity-text px-3">@item.Count</span>
+                                                            <a class="btn btn-outline-danger" asp-action="Minus" asp-route-cartid="@item.ShoppingCartId"><i class="fa fa-minus"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 price text-center">
+                                            <label for="price">Price:</label>
+                                            <span class="price-text">$@item.Product.Price</span>
+                                            <a asp-action="Remove" asp-route-cartid="@item.ShoppingCartId" class="btn btn-outline-danger btn-sm mt-2"><i class="fa fa-trash"></i> Remove</a>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                            <div class="card summary-card">
+                                <div class="card-header summary-card-header">
+                                    Order Summary
+                                </div>
+                                <div class="card-body summary-card-body">
+                                    <div class="summary-item">
+                                        <span class="text">Subtotal</span>
+                                        <span class="price">$@Model.TotalPriceForCarts.ToString()</span>
+                                    </div>
+                                    
+                                    <div class="summary-item">
+                                        <span class="text">Shipping</span>
+                                        <span class="price">$0.00</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="text">Total</span>
+                                        <span class="price">$@((Model.TotalPriceForCarts).ToString("0.00"))</span>
+                                    </div>
+                                    <form asp-controller="Cart" asp-action="Summary" method="get">
+                                        <input hidden asp-for="@Model.OrderHeader.Id" name="orderId" />
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block mt-3">Checkout</button>
+                                    </form>
+                                </div>
+                            </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-info" role="alert">
+                                There is no Items in your cart.
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

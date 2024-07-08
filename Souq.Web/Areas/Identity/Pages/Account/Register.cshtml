@@ -1,0 +1,143 @@
+﻿@page
+@using Souq.Utilities
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<style>
+    .imgdiv {
+        background-size: cover;
+        height: 100%;
+    }
+
+    .loginimg {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .form-floating {
+        position: relative;
+    }
+
+    .show-password-toggle {
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6c757d;
+    }
+
+        .show-password-toggle:hover {
+            color: #343a40;
+        }
+
+    .form-check-label {
+        padding-left: 0.75rem;
+    }
+</style>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="mb-4 text-center">Create a new account</h2>
+                        <hr />
+                        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                            <div class="mb-3">
+                                <label for="Input_Name" class="form-label">Name</label>
+                                <input asp-for="Input.Name" id="Input_Name" class="form-control" autocomplete="username" aria-required="true" placeholder="Enter your name" />
+                                <span asp-validation-for="Input.Name" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Input_Email" class="form-label">Email</label>
+                                <input asp-for="Input.Email" id="Input_Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="Input_Address" class="form-label">Address</label>
+                                <input asp-for="Input.Address" id="Input_Address" class="form-control" aria-required="true" placeholder="Enter your address" />
+                                <span asp-validation-for="Input.Address" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Input_City" class="form-label">City</label>
+                                <input asp-for="Input.City" id="Input_City" class="form-control" aria-required="true" placeholder="Enter your city" />
+                                <span asp-validation-for="Input.City" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Input_Password" class="form-label">Password</label>
+                                <div class="input-group">
+                                    <input asp-for="Input.Password" id="Input_Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Enter password" />
+                                    <span class="input-group-text show-password-toggle" onclick="togglePasswordVisibility('Input_Password')">
+                                        <i class="bi bi-eye"></i>
+                                    </span>
+                                </div>
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Input_ConfirmPassword" class="form-label">Confirm Password</label>
+                                <div class="input-group">
+                                    <input asp-for="Input.ConfirmPassword" id="Input_ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Confirm password" />
+                                    <span class="input-group-text show-password-toggle" onclick="togglePasswordVisibility('Input_ConfirmPassword')">
+                                        <i class="bi bi-eye"></i>
+                                    </span>
+                                </div>
+                                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                            </div>
+                            @if (User.IsInRole(SD.AdminRole))
+                            {
+                                <div class="mb-3">
+                                    <label class="form-label">Role</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" value="@SD.AdminRole" name="RoleRadio" id="RoleAdmin">
+                                        <label class="form-check-label" for="RoleAdmin">@SD.AdminRole</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" value="@SD.EditorRole" name="RoleRadio" id="RoleEditor">
+                                        <label class="form-check-label" for="RoleEditor">@SD.EditorRole</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" value="@SD.CustomerRole" name="RoleRadio" id="RoleCustomer">
+                                        <label class="form-check-label" for="RoleCustomer">@SD.CustomerRole</label>
+                                    </div>
+                                </div>
+                            }
+                            <button id="registerSubmit" type="submit" class="btn btn-primary w-100">
+                                @(User.IsInRole(SD.AdminRole) ? "Create user" : "Register")
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 d-none d-md-block">
+                <div class="imgdiv">
+                    <img class="loginimg" src="~/images/6310507.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        function togglePasswordVisibility(fieldId) {
+            var field = document.getElementById(fieldId);
+            var icon = field.nextElementSibling.firstChild;
+            if (field.type === "password") {
+                field.type = "text";
+                icon.classList.remove("bi-eye");
+                icon.classList.add("bi-eye-slash");
+            } else {
+                field.type = "password";
+                icon.classList.remove("bi-eye-slash");
+                icon.classList.add("bi-eye");
+            }
+        }
+    </script>
+}

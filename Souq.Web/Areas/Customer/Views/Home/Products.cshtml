@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Product>
+@using Microsoft.AspNetCore.Mvc.RazorPages
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@{
+    var categoryId = ViewBag.CategoryId;
+    var productName = ViewBag.ProductName;
+    var bootstrapPagerOptions = new PagedListRenderOptions
+            {
+                LiElementClasses = new[] { "page-item" },
+                PageClasses = new[] { "page-link" },
+                ContainerDivClasses = new[] { "pagination-container" },
+                UlElementClasses = new[] { "pagination" },
+                DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+                DisplayLinkToLastPage = PagedListDisplayMode.Always,
+                DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                DisplayLinkToIndividualPages = true,
+                MaximumPageNumbersToDisplay = 5,
+                LinkToFirstPageFormat = "First",
+                LinkToPreviousPageFormat = "Previous",
+                LinkToNextPageFormat = "Next",
+                LinkToLastPageFormat = "Last",
+                Display = PagedListDisplayMode.Always
+                //Display = PagedListDisplayMode.IfNeeded
+            };
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .input-group {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+        .input-group .form-control {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+    .input-group-append .btn {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+</style>
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form asp-action="Products" class="input-group" method="get">
+                <input type="search" name="productName" id="productName" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary" data-mdb-ripple-init>
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                @if(categoryId != null)
+                {
+                    <input hidden name="catId" value="@categoryId" />
+                }
+            </form>
+        </div>
+    </div>
+</div>
+            
+<section class="py-5">
+    @if (Model.Count() > 0)
+    {
+    <div class="container px-4 px-lg-5 mt-5">
+        
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            @foreach (var item in Model)
+            {
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <a href="\Customer\Home\Details\@item.Id">
+                            <img class="card-img-top" src="~/@item.ImageUrl" alt="Product Image" width="400" height="250" />
+                        </a>
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">@item.Name</h5>
+                                <!-- Product price-->
+                                $@item.Price
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <form asp-action="AddToCart" method="post">
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <input asp-for="@item.Id" name="ProductId" hidden />
+                                <input name="Count" value=1 hidden />
+
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-outline-dark mt-auto" type="submit">Add to Cart</button>
+                                    <a asp-action="Details" asp-route-ProductId="@item.Id" class="btn btn-outline-dark mt-auto">View Details</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <nav aria-label="Page navigation example">
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Products", new { catId = categoryId, productName = productName, page = page }), bootstrapPagerOptions)
+        </nav>
+        
+    </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center" role="alert">
+            No products found.
+        </div>
+    }
+</section>

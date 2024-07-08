@@ -1,0 +1,61 @@
+﻿@model ProductVM
+@{
+    ViewBag.PageTitle = "Product Management";
+    ViewBag.CardTitle = "Create Product";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label asp-for="Product.Name"></label>
+                <input asp-for="Product.Name" class="form-control" />
+                <span asp-validation-for="Product.Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Product.Description"></label>
+                <textarea asp-for="Product.Description" class="form-control"></textarea>
+                <span asp-validation-for="Product.Description" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Product.Price"></label>
+                <input asp-for="Product.Price" class="form-control" />
+                <span asp-validation-for="Product.Price" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Product.ImageUrl"></label>
+                <input type="file" name="file" id="imgfile" class="form-control" onchange="fillimg(event);"/>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Product.CategoryId"></label>
+                <select asp-for="Product.CategoryId" asp-items="Model.CategoryList" class="form-control">
+                    <option disabled selected>-- Select Category --</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Add Product</button>
+                <a asp-action="Index" class="btn btn-secondary">Back to home</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <div class="container">
+            <img id="ImagePreview" width="300" height="300" />
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+
+    <script>
+        var fillimg = function fillimg(event) {
+            var output = document.getElementById('ImagePreview');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        }
+    </script>
+}
+

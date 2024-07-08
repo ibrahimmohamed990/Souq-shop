@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Category>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+
+@{
+    var bootstrapPagerOptions = new PagedListRenderOptions
+            {
+                LiElementClasses = new[] { "page-item" },
+                PageClasses = new[] { "page-link" },
+                ContainerDivClasses = new[] { "pagination-container" },
+                UlElementClasses = new[] { "pagination" },
+                DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+                DisplayLinkToLastPage = PagedListDisplayMode.Always,
+                DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                DisplayLinkToIndividualPages = true,
+                MaximumPageNumbersToDisplay = 5,
+                LinkToFirstPageFormat = "First",
+                LinkToPreviousPageFormat = "Previous",
+                LinkToNextPageFormat = "Next",
+                LinkToLastPageFormat = "Last",
+                Display = PagedListDisplayMode.Always
+                //Display = PagedListDisplayMode.IfNeeded
+            };
+}
+
+<style>
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<section class="py-4">
+    @if(Model.Count() > 0)
+    {
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2 class="fw-bolder">All Categories</h2>
+    </div>
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            @foreach (var item in Model)
+            {
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h3 class="fw-bolder">@item.Name</h3>
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="\Customer\Home\Products?catId=@item.Id">Show Products</a></div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <nav aria-label="Page navigation example">
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }), bootstrapPagerOptions)
+        </nav>
+    </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center" role="alert">
+            No categories found.
+        </div>
+    }
+</section>

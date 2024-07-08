@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\PubTmp\Out\" />
+  <dbfullsql path="E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\PubTmp\EFSQLScripts\Souq.DataAccessLayer.Context.ApplicationDbContext.sql" />
+  <dbfullsql path="E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\PubTmp\EFSQLScripts\Souq.DataAccessLayer.Context.IdentityUserDbContext.sql" />
+</sitemanifest>

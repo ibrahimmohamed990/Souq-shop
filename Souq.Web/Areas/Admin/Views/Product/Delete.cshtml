@@ -1,0 +1,43 @@
+﻿@model ProductToDelete
+@{
+    ViewBag.PageTitle = "Product Management";
+    ViewBag.CardTitle = "Delete Product";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="ImageUrl" />
+
+            <div class="mb-3">
+                <label asp-for="Name"></label>
+                <input readonly asp-for="Name" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Description"></label>
+                <textarea readonly asp-for="Description" class="form-control"></textarea>
+
+            </div>
+             <div class="mb-3">
+                <label asp-for="Price"></label>
+                <input readonly asp-for="Price" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="CategoryName">Category</label>
+                <input readonly asp-for="CategoryName" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <a asp-action="Index" class="btn btn-secondary">Back to home</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <div class="container">
+            <img id="ImagePreview" src="~/@Model.ImageUrl" width="300" height="300" />
+        </div>
+    </div>
+</div>
+

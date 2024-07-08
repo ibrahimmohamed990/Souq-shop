@@ -1,0 +1,138 @@
+﻿@if (SignInManager.IsSignedIn(User))
+{
+    var user = await UserManager.GetUserAsync(User);
+    ViewBag.CartsCount = unitOfWork.ShoppingCartRepository.CartsCount(user.Id);
+}
+else
+{
+    ViewBag.CartsCount = 0;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>SOUq.com</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/customer/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="\Customer\Home\Index">SOUq.com</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="\Customer\Home\Index">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="\Customer\Home\Index">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="\Customer\Home\Products">Products</a></li>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item"><a class="nav-link" href="\Admin\Dashboard\">Dashboard</a></li> 
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/Customer/Home/Orders">My Orders</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="/Identity/Account/Manage/Index">Edit Profile</a></li>
+                            </ul>
+                        </li>
+                    }
+                    <li class="nav-item"><a class="nav-link" href="/Customer/Home/About">About</a></li>
+                </ul>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <form class="d-flex">
+                        <a href="/Customer/Cart/Index" class="btn btn-outline-dark">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">
+                                @ViewBag.CartsCount
+                            </span>
+                        </a>
+                    </form>
+                }
+                <partial name="_LoginPartial" />
+            </div>
+        </div>
+    </nav>
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Welcome to your SOUq</h1>
+                <p class="lead fw-normal text-white-50 mb-0">You can Shop Everything you need</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product section-->
+    @RenderBody()
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; SOUq.com 2024</p></div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="~/customer/js/scripts.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate.unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        function incrementCount(itemId) {
+            let countInput = document.getElementById('item-count-' + itemId);
+            let currentCount = parseInt(countInput.value);
+            countInput.value = currentCount + 1;
+        }
+
+        function decrementCount(itemId) {
+            let countInput = document.getElementById('item-count-' + itemId);
+            let currentCount = parseInt(countInput.value);
+            if (currentCount > 1) {
+                countInput.value = currentCount - 1;
+            }
+        }
+    </script>
+    <script>
+    function incrementQuantity() {
+        let quantityInput = document.getElementById('inputQuantity');
+        let currentQuantity = parseInt(quantityInput.value);
+        quantityInput.value = currentQuantity + 1;
+    }
+
+    function decrementQuantity() {
+        let quantityInput = document.getElementById('inputQuantity');
+        let currentQuantity = parseInt(quantityInput.value);
+        if (currentQuantity > 1) {
+            quantityInput.value = currentQuantity - 1;
+        }
+    }
+</script>
+
+
+</body>
+</html>

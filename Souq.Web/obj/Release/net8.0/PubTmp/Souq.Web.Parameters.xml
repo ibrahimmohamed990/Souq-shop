@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="site6265" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\Projects\\SOUQ\\Souq\.Web\\obj\\Release\\net8\.0\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="Souq.DataAccessLayer.Context.ApplicationDbContext" description="" value="Server=db6278.public.databaseasp.net; Database=db6278.databaseasp.net; User Id=db6278.databaseasp.net; Password=4Dn?w6+B#S5m; Encrypt=True; TrustServerCertificate=True; MultipleActiveResultSets=True;" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^E:\\Projects\\SOUQ\\Souq\.Web\\obj\\Release\\net8\.0\\PubTmp\\EFSQLScripts\\Souq\.DataAccessLayer\.Context\.ApplicationDbContext\.sql$" />
+  </parameter>
+  <parameter name="Souq.DataAccessLayer.Context.IdentityUserDbContext" description="" value="Server=db6279.public.databaseasp.net; Database=db6279.databaseasp.net; User Id=db6279.databaseasp.net; Password=S-e6@2AwkY!3; Encrypt=True; TrustServerCertificate=True; MultipleActiveResultSets=True;" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^E:\\Projects\\SOUQ\\Souq\.Web\\obj\\Release\\net8\.0\\PubTmp\\EFSQLScripts\\Souq\.DataAccessLayer\.Context\.IdentityUserDbContext\.sql$" />
+  </parameter>
+</parameters>
