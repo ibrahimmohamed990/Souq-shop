@@ -17,3 +17,4 @@ E:\Projects\SOUQ\Souq.DataAccessLayer\obj\Debug\net8.0\refint\Souq.DataAccessLay
 E:\Projects\SOUQ\Souq.DataAccessLayer\obj\Debug\net8.0\Souq.DataAccessLayer.pdb
 E:\Projects\SOUQ\Souq.DataAccessLayer\obj\Debug\net8.0\Souq.DataAccessLayer.genruntimeconfig.cache
 E:\Projects\SOUQ\Souq.DataAccessLayer\obj\Debug\net8.0\ref\Souq.DataAccessLayer.dll
+E:\Projects\SOUQ\Souq.DataAccessLayer\obj\Debug\net8.0\Souq.DataAccessLayer.sourcelink.json

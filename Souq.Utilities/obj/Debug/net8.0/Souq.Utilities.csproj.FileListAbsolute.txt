@@ -10,3 +10,4 @@ E:\Projects\SOUQ\Souq.Utilities\obj\Debug\net8.0\Souq.Utilities.dll
 E:\Projects\SOUQ\Souq.Utilities\obj\Debug\net8.0\refint\Souq.Utilities.dll
 E:\Projects\SOUQ\Souq.Utilities\obj\Debug\net8.0\Souq.Utilities.pdb
 E:\Projects\SOUQ\Souq.Utilities\obj\Debug\net8.0\ref\Souq.Utilities.dll
+E:\Projects\SOUQ\Souq.Utilities\obj\Debug\net8.0\Souq.Utilities.sourcelink.json

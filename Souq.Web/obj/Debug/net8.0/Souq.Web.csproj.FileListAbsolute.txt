@@ -596,3 +596,4 @@ E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\refint\Souq.Web.dll
 E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\Souq.Web.pdb
 E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\Souq.Web.genruntimeconfig.cache
 E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\ref\Souq.Web.dll
+E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\Souq.Web.sourcelink.json
