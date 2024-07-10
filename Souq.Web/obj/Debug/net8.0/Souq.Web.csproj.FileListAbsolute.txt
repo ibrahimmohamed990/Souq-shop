@@ -580,6 +580,7 @@ E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\Souq.Web.MvcApplicationPartsAssemblyI
 E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\Souq.Web.MvcApplicationPartsAssemblyInfo.cache
 E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\Souq.Web.RazorAssemblyInfo.cache
 E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\Souq.Web.RazorAssemblyInfo.cs
+E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\Souq.Web.sourcelink.json
 E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\staticwebassets.build.json
 E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\staticwebassets.development.json
 E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\staticwebassets\msbuild.Souq.Web.Microsoft.AspNetCore.StaticWebAssets.props
@@ -596,4 +597,7 @@ E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\refint\Souq.Web.dll
 E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\Souq.Web.pdb
 E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\Souq.Web.genruntimeconfig.cache
 E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\ref\Souq.Web.dll
-E:\Projects\SOUQ\Souq.Web\obj\Debug\net8.0\Souq.Web.sourcelink.json
+E:\Projects\SOUQ\Souq.Web\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\Projects\SOUQ\Souq.Web\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\Projects\SOUQ\Souq.Web\bin\Debug\net8.0\refs\Microsoft.Extensions.Identity.Core.dll
+E:\Projects\SOUQ\Souq.Web\bin\Debug\net8.0\refs\Microsoft.Extensions.Identity.Stores.dll

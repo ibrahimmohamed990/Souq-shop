@@ -12,10 +12,11 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("d0dd1eff-4d5c-4969-9ff2-3a177f536994")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Souq.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be37a0eed14403f3cb9435bcc9b74b493bae51f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Souq.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Souq.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

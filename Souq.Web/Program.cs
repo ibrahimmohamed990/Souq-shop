@@ -13,6 +13,7 @@ using Stripe;
 using Souq.Web.Middlewares;
 using Souq.DataAccessLayer.DbInitializer;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.DataProtection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,14 +31,6 @@ builder.Services.AddDbContext<IdentityUserDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityUserDbContextConnection"));
 });
 
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
-    {
-        options.ExpireTimeSpan = TimeSpan.FromDays(2); // Set the cookie expiration to 2 days
-        options.SlidingExpiration = true; // Optional: enable sliding expiration
-        options.Cookie.IsEssential = true;
-        options.LoginPath = "/Account/Login"; // Set the login path
-    });
 
 //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
 //    .AddEntityFrameworkStores<IdentityUserDbContext>();
@@ -53,6 +46,17 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
        .AddEntityFrameworkStores<IdentityUserDbContext>()
        .AddDefaultTokenProviders().AddDefaultUI();
 
+
+var keyDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "keys");
+if (!Directory.Exists(keyDirectory))
+{
+    Directory.CreateDirectory(keyDirectory);
+}
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo(keyDirectory))
+    .SetApplicationName("souq-shop");
+
+
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromDays(2);
@@ -62,8 +66,9 @@ builder.Services.AddSession(options =>
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
+    //options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
     options.Cookie.HttpOnly = true;
-    options.ExpireTimeSpan = TimeSpan.FromDays(5);
+    options.ExpireTimeSpan = TimeSpan.FromDays(2);
     options.SlidingExpiration = true;
     options.Cookie.IsEssential = true;
     options.LoginPath = "/Identity/Account/Login";
@@ -71,6 +76,16 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Identity/Account/AccessDenied";
 });
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        //options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+        options.Cookie.HttpOnly = true;
+        options.ExpireTimeSpan = TimeSpan.FromDays(2); // Set the cookie expiration to 2 days
+        options.SlidingExpiration = true; // Optional: enable sliding expiration
+        options.Cookie.IsEssential = true;
+        options.LoginPath = "/Identity/Account/Login"; 
+    });
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IUnitOfWorkForIdentity, UnitOfWorkForIdentity>();
@@ -80,26 +95,24 @@ builder.Services.AddAutoMapper(typeof(ProductProfile));
 builder.Services.AddSingleton<IEmailSender, EmailSender>();
 
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-await SeedDatabase();  // to seed the database with admin user and roles 
 
 app.UseHttpsRedirection();
-app.UseSession();
 app.UseStaticFiles();
 
 app.UseRouting();
+await SeedDatabase();  // to seed the database with admin user and roles 
 
 StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
 
+app.UseSession();
 
 app.UseAuthentication();
 app.UseAuthorization();

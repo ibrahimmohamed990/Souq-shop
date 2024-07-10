@@ -11,6 +11,7 @@ E:\Projects\SOUQ\Souq.DataAccessLayer\obj\Release\net8.0\Souq.DataAccessLayer.Ge
 E:\Projects\SOUQ\Souq.DataAccessLayer\obj\Release\net8.0\Souq.DataAccessLayer.AssemblyInfoInputs.cache
 E:\Projects\SOUQ\Souq.DataAccessLayer\obj\Release\net8.0\Souq.DataAccessLayer.AssemblyInfo.cs
 E:\Projects\SOUQ\Souq.DataAccessLayer\obj\Release\net8.0\Souq.DataAccessLayer.csproj.CoreCompileInputs.cache
+E:\Projects\SOUQ\Souq.DataAccessLayer\obj\Release\net8.0\Souq.DataAccessLayer.sourcelink.json
 E:\Projects\SOUQ\Souq.DataAccessLayer\obj\Release\net8.0\Souq.Dat.73B0BDFA.Up2Date
 E:\Projects\SOUQ\Souq.DataAccessLayer\obj\Release\net8.0\Souq.DataAccessLayer.dll
 E:\Projects\SOUQ\Souq.DataAccessLayer\obj\Release\net8.0\refint\Souq.DataAccessLayer.dll

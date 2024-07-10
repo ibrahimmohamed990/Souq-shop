@@ -131,7 +131,39 @@ else
             quantityInput.value = currentQuantity - 1;
         }
     }
-</script>
+    </script>
+    
+    @* <script>
+        // Function to perform the keep-alive request
+        function pingKeepAlive() {
+            fetch('/Customer/keep-alive')
+                .then(function (response) {
+                    if (!response.ok) {
+                        console.error('Failed to ping keep-alive endpoint:', response.statusText);
+                    }
+                })
+                .catch(function (error) {
+                    console.error('Error pinging keep-alive endpoint:', error);
+                });
+        }
+
+        // Execute on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            pingKeepAlive(); // Initial ping on page load
+            setInterval(pingKeepAlive, 300000); // Ping every 5 minutes (300,000 milliseconds)
+        });
+    </script>
+ *@
+    @* <script>
+        setInterval(function () {
+            fetch('/customer/keep-alive', { method: 'GET' });
+        }, 5 * 60 * 1000); // Every 5 minutes
+    </script> *@
+    @* <script>
+        setInterval(function () {
+            fetch('/keep-alive', { method: 'GET' });
+        }, 5 * 60 * 1000); // Every 5 minutes
+    </script> *@
 
 
 </body>

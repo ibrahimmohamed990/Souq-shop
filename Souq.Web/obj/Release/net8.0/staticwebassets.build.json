@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "r2MuHoEOtUw+I3U+fTriwE69nmxF9LVYQcpkzyN9LZg=",
+  "Hash": "oHE9DwLg+n+0mfYiNHa13E/cqQac0KRJ2wD04FuHG7U=",
   "Source": "Souq.Web",
   "BasePath": "_content/Souq.Web",
   "Mode": "Default",
@@ -5601,6 +5601,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "E:\\Projects\\SOUQ\\Souq.Web\\wwwroot\\keys\\key-564ae23d-0be0-4983-a5fb-0175b291bda0.xml",
+      "SourceId": "Souq.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Projects\\SOUQ\\Souq.Web\\wwwroot\\",
+      "BasePath": "_content/Souq.Web",
+      "RelativePath": "keys/key-564ae23d-0be0-4983-a5fb-0175b291bda0.xml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\keys\\key-564ae23d-0be0-4983-a5fb-0175b291bda0.xml"
     },
     {
       "Identity": "E:\\Projects\\SOUQ\\Souq.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

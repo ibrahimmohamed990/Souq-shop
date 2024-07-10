@@ -933,6 +933,10 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "E:\\Projects\\SOUQ\\Souq.Web\\wwwroot\\keys\\key-564ae23d-0be0-4983-a5fb-0175b291bda0.xml",
+      "PackagePath": "staticwebassets\\keys\\key-564ae23d-0be0-4983-a5fb-0175b291bda0.xml"
+    },
+    {
       "Id": "E:\\Projects\\SOUQ\\Souq.Web\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },

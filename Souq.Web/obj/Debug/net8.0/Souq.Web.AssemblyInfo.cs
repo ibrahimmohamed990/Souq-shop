@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Souq.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89ee17e9e9ae8fee46705fcb939ec52873d468b2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be37a0eed14403f3cb9435bcc9b74b493bae51f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Souq.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Souq.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

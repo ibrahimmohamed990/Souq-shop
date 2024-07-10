@@ -25,6 +25,8 @@ E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.AspNetCore.Component
 E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
 E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.AspNetCore.CookiePolicy.dll
 E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.AspNetCore.Cors.dll
+E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
 E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.AspNetCore.DataProtection.dll
 E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
@@ -120,6 +122,8 @@ E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.Extensions.FileSyste
 E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.Extensions.Hosting.Abstractions.dll
 E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.Extensions.Hosting.dll
 E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.Extensions.Http.dll
+E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.Extensions.Identity.Core.dll
+E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.Extensions.Identity.Stores.dll
 E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.Extensions.Localization.Abstractions.dll
 E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.Extensions.Localization.dll
 E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\refs\Microsoft.Extensions.Logging.Abstractions.dll
@@ -580,6 +584,7 @@ E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\Souq.Web.MvcApplicationPartsAssembl
 E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\Souq.Web.MvcApplicationPartsAssemblyInfo.cache
 E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\Souq.Web.RazorAssemblyInfo.cache
 E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\Souq.Web.RazorAssemblyInfo.cs
+E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\Souq.Web.sourcelink.json
 E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\staticwebassets.build.json
 E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\staticwebassets.development.json
 E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\staticwebassets\msbuild.Souq.Web.Microsoft.AspNetCore.StaticWebAssets.props

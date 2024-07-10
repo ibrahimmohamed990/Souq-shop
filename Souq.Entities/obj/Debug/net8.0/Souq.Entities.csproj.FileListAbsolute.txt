@@ -6,6 +6,7 @@ E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\Souq.Entities.GeneratedMSBuildEd
 E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\Souq.Entities.AssemblyInfoInputs.cache
 E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\Souq.Entities.AssemblyInfo.cs
 E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\Souq.Entities.csproj.CoreCompileInputs.cache
+E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\Souq.Entities.sourcelink.json
 E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\Souq.Entities.dll
 E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\refint\Souq.Entities.dll
 E:\Projects\SOUQ\Souq.Entities\obj\Debug\net8.0\Souq.Entities.pdb

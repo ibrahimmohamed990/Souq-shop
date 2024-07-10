@@ -567,3 +567,8 @@ E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\win-x86\refint\Souq.Web.dll
 E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\win-x86\Souq.Web.pdb
 E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\win-x86\Souq.Web.genruntimeconfig.cache
 E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\win-x86\ref\Souq.Web.dll
+E:\Projects\SOUQ\Souq.Web\obj\Release\net8.0\win-x86\Souq.Web.sourcelink.json
+E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\win-x86\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\win-x86\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\win-x86\refs\Microsoft.Extensions.Identity.Core.dll
+E:\Projects\SOUQ\Souq.Web\bin\Release\net8.0\win-x86\refs\Microsoft.Extensions.Identity.Stores.dll
