@@ -933,6 +933,10 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "E:\\Projects\\SOUQ\\Souq.Web\\wwwroot\\keys\\key-199d1ba1-32ff-4832-b2eb-9270ccb5384d.xml",
+      "PackagePath": "staticwebassets\\keys\\key-199d1ba1-32ff-4832-b2eb-9270ccb5384d.xml"
+    },
+    {
       "Id": "E:\\Projects\\SOUQ\\Souq.Web\\wwwroot\\keys\\key-564ae23d-0be0-4983-a5fb-0175b291bda0.xml",
       "PackagePath": "staticwebassets\\keys\\key-564ae23d-0be0-4983-a5fb-0175b291bda0.xml"
     },

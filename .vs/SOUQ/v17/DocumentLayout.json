@@ -1,7 +1,56 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Projects\\SOUQ\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|e:\\projects\\souq\\souq.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|solutionrelative:souq.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|e:\\projects\\souq\\souq.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|solutionrelative:souq.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|e:\\projects\\souq\\souq.web\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|solutionrelative:souq.web\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|e:\\projects\\souq\\souq.web\\areas\\identity\\pages\\account\\loginwith2fa.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|solutionrelative:souq.web\\areas\\identity\\pages\\account\\loginwith2fa.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|e:\\projects\\souq\\souq.web\\areas\\identity\\pages\\account\\loginwith2fa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|solutionrelative:souq.web\\areas\\identity\\pages\\account\\loginwith2fa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD44A959-FFEF-434A-A962-0E9B177ADA2B}|Souq.DataAccessLayer\\Souq.DataAccessLayer.csproj|e:\\projects\\souq\\souq.dataaccesslayer\\context\\identityuserdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD44A959-FFEF-434A-A962-0E9B177ADA2B}|Souq.DataAccessLayer\\Souq.DataAccessLayer.csproj|solutionrelative:souq.dataaccesslayer\\context\\identityuserdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|e:\\projects\\souq\\souq.web\\areas\\customer\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|solutionrelative:souq.web\\areas\\customer\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|e:\\projects\\souq\\souq.web\\areas\\admin\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|solutionrelative:souq.web\\areas\\admin\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|e:\\projects\\souq\\souq.web\\areas\\admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|solutionrelative:souq.web\\areas\\admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{443709E3-E07B-4A0D-ABB2-6420B0EEA5CF}|Souq.Entities\\Souq.Entities.csproj|e:\\projects\\souq\\souq.entities\\viewmodels\\productviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{443709E3-E07B-4A0D-ABB2-6420B0EEA5CF}|Souq.Entities\\Souq.Entities.csproj|solutionrelative:souq.entities\\viewmodels\\productviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|e:\\projects\\souq\\souq.web\\middlewares\\rolebasedredirectmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BED01F7-0698-402B-ABC0-52650243F02D}|Souq.Web\\Souq.Web.csproj|solutionrelative:souq.web\\middlewares\\rolebasedredirectmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD44A959-FFEF-434A-A962-0E9B177ADA2B}|Souq.DataAccessLayer\\Souq.DataAccessLayer.csproj|e:\\projects\\souq\\souq.dataaccesslayer\\implementation\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD44A959-FFEF-434A-A962-0E9B177ADA2B}|Souq.DataAccessLayer\\Souq.DataAccessLayer.csproj|solutionrelative:souq.dataaccesslayer\\implementation\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +71,159 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IdentityUserDbContext.cs",
+              "DocumentMoniker": "E:\\Projects\\SOUQ\\Souq.DataAccessLayer\\Context\\IdentityUserDbContext.cs",
+              "RelativeDocumentMoniker": "Souq.DataAccessLayer\\Context\\IdentityUserDbContext.cs",
+              "ToolTip": "E:\\Projects\\SOUQ\\Souq.DataAccessLayer\\Context\\IdentityUserDbContext.cs",
+              "RelativeToolTip": "Souq.DataAccessLayer\\Context\\IdentityUserDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T22:46:10.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "E:\\Projects\\SOUQ\\Souq.Web\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "Souq.Web\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "E:\\Projects\\SOUQ\\Souq.Web\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeToolTip": "Souq.Web\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAQwDgAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T22:27:35.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginWith2fa.cshtml.cs",
+              "DocumentMoniker": "E:\\Projects\\SOUQ\\Souq.Web\\Areas\\Identity\\Pages\\Account\\LoginWith2fa.cshtml.cs",
+              "RelativeDocumentMoniker": "Souq.Web\\Areas\\Identity\\Pages\\Account\\LoginWith2fa.cshtml.cs",
+              "ToolTip": "E:\\Projects\\SOUQ\\Souq.Web\\Areas\\Identity\\Pages\\Account\\LoginWith2fa.cshtml.cs",
+              "RelativeToolTip": "Souq.Web\\Areas\\Identity\\Pages\\Account\\LoginWith2fa.cshtml.cs",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAIwBkAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T22:27:23.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginWith2fa.cshtml",
+              "DocumentMoniker": "E:\\Projects\\SOUQ\\Souq.Web\\Areas\\Identity\\Pages\\Account\\LoginWith2fa.cshtml",
+              "RelativeDocumentMoniker": "Souq.Web\\Areas\\Identity\\Pages\\Account\\LoginWith2fa.cshtml",
+              "ToolTip": "E:\\Projects\\SOUQ\\Souq.Web\\Areas\\Identity\\Pages\\Account\\LoginWith2fa.cshtml",
+              "RelativeToolTip": "Souq.Web\\Areas\\Identity\\Pages\\Account\\LoginWith2fa.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-10T22:27:20.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "E:\\Projects\\SOUQ\\Souq.Web\\Areas\\Admin\\Views\\Order\\Details.cshtml",
+              "RelativeDocumentMoniker": "Souq.Web\\Areas\\Admin\\Views\\Order\\Details.cshtml",
+              "ToolTip": "E:\\Projects\\SOUQ\\Souq.Web\\Areas\\Admin\\Views\\Order\\Details.cshtml",
+              "RelativeToolTip": "Souq.Web\\Areas\\Admin\\Views\\Order\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-09T23:57:13.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "E:\\Projects\\SOUQ\\Souq.Web\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Souq.Web\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "ToolTip": "E:\\Projects\\SOUQ\\Souq.Web\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Souq.Web\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "ViewState": "AQIAACUAAAAAZmZmZmYSwDIAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T23:54:27.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Projects\\SOUQ\\Souq.Web\\Program.cs",
+              "RelativeDocumentMoniker": "Souq.Web\\Program.cs",
+              "ToolTip": "E:\\Projects\\SOUQ\\Souq.Web\\Program.cs",
+              "RelativeToolTip": "Souq.Web\\Program.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAC8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T18:49:33.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Projects\\SOUQ\\Souq.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "Souq.Web\\appsettings.json",
+              "ToolTip": "E:\\Projects\\SOUQ\\Souq.Web\\appsettings.json",
+              "RelativeToolTip": "Souq.Web\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-08T21:05:20.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\Projects\\SOUQ\\Souq.Web\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Souq.Web\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\Projects\\SOUQ\\Souq.Web\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Souq.Web\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAA1wC0AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T19:25:09.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductViewModel.cs",
+              "DocumentMoniker": "E:\\Projects\\SOUQ\\Souq.Entities\\ViewModels\\ProductViewModel.cs",
+              "RelativeDocumentMoniker": "Souq.Entities\\ViewModels\\ProductViewModel.cs",
+              "ToolTip": "E:\\Projects\\SOUQ\\Souq.Entities\\ViewModels\\ProductViewModel.cs",
+              "RelativeToolTip": "Souq.Entities\\ViewModels\\ProductViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T19:24:38.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RoleBasedRedirectMiddleware.cs",
+              "DocumentMoniker": "E:\\Projects\\SOUQ\\Souq.Web\\Middlewares\\RoleBasedRedirectMiddleware.cs",
+              "RelativeDocumentMoniker": "Souq.Web\\Middlewares\\RoleBasedRedirectMiddleware.cs",
+              "ToolTip": "E:\\Projects\\SOUQ\\Souq.Web\\Middlewares\\RoleBasedRedirectMiddleware.cs",
+              "RelativeToolTip": "Souq.Web\\Middlewares\\RoleBasedRedirectMiddleware.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T19:22:58.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "E:\\Projects\\SOUQ\\Souq.DataAccessLayer\\Implementation\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "Souq.DataAccessLayer\\Implementation\\ProductRepository.cs",
+              "ToolTip": "E:\\Projects\\SOUQ\\Souq.DataAccessLayer\\Implementation\\ProductRepository.cs",
+              "RelativeToolTip": "Souq.DataAccessLayer\\Implementation\\ProductRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T19:22:18.329Z"
             }
           ]
         }

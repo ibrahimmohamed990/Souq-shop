@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
 
-    <style>
+    
+<style>
         .btn-custom {
             border-radius: 50px;
             padding: 10px 30px;
@@ -130,8 +131,8 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label asp-for="OrderHeader.OrderHeader.ShippingDate">Shipping Date</label>
-                            <input type="date" class="form-control" asp-for="OrderHeader.OrderHeader.ShippingDate" placeholder="Shipping Date">
-                            <span asp-validation-for="OrderHeader.OrderHeader.ShippingDate" class="text-danger"></span>
+                            <input readonly type="date" class="form-control" asp-for="OrderHeader.OrderHeader.ShippingDate" placeholder="Shipping Date">
+                            @* <span asp-validation-for="OrderHeader.OrderHeader.ShippingDate" class="text-danger"></span> *@
                         </div>
                     </div>
                     <div class="form-row">
